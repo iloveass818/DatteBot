@@ -7,14 +7,14 @@ from discord.ext import commands
 class ChatBot(commands.Cog):
   def __init__(self, client):
     self.client = client
-    
+  
     
   @commands.Cog.listener()
   async def on_message(self, msg):
     if  msg.author == self.client.user:
       return
       
-    if msg.channel.id == 761519146155507712:
+    if msg.channel.id == 864776000066813982:
       params = {'server': "primary" , 'message':msg.content , 'master': "iloveass2#8380", 'bot': "DatteBot"}
       headers = {"x-api-key":os.getenv('Ai_key')}
       async with aiohttp.ClientSession() as session:
@@ -26,8 +26,6 @@ class ChatBot(commands.Cog):
     
     else:
       pass
-    
-    await self.client.process_commands(msg)
 
 
 def setup(client):
