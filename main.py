@@ -10,22 +10,9 @@ import tracemalloc
 from googleapiclient.discovery import build
 
 
-
-
-tracemalloc.start()
-
-client = discord.Client()
-
-        
+client = discord.Client()        
 client = commands.Bot(command_prefix='&')
 client.remove_command('help')
-
-
-
-players = {}
-
-
-
 
 
 @client.event
@@ -37,7 +24,7 @@ async def on_ready():
   print('{0.user} ready perfectly'.format(client))
 
 
-@client.command(aliases = ["restart"])
+@client.command(aliases = ["restart", "reloas"])
 async def reload(ctx):
   if ctx.message.author.id == 416909560129781770:
     reload=discord.Embed(description="Bot is reloaded and is ready perfectly!")
@@ -52,10 +39,9 @@ async def reload(ctx):
   else:
     await ctx.send("you really thought i'd let everyone use it?")
 
-    
-      
-
+          
 from keep_alive import keep_alive
 
 keep_alive()
+
 client.run(os.getenv('TOKEN'))

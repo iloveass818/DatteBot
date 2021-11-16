@@ -31,7 +31,7 @@ class images(commands.Cog):
       url = result["items"][ran]["link"]
       embed1 = discord.Embed(title=f"Here is the image you requested for {search.title()})")
       embed1.set_image(url=url)
-      await ctx.send(embed=embed1,delete_after = 3)
+      await ctx.send(embed=embed1, delete_after = 60)
       await ctx.message.delete()
     else:
       await ctx.send("You need to use this command in a nsfw channel!")
