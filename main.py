@@ -24,7 +24,7 @@ async def on_ready():
   print('{0.user} ready perfectly'.format(client))
 
 
-@client.command(aliases = ["restart", "reloas"])
+@client.command(aliases = ["restart", "reload"])
 async def reload(ctx):
   if ctx.message.author.id == 416909560129781770:
     reload=discord.Embed(description="Bot is reloaded and is ready perfectly!")
